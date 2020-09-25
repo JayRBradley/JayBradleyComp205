@@ -1,0 +1,12 @@
+    {%  extends "base.html" %}
+{%  block content %}
+<h1>List of Artists</h1>
+      {% for post in posts %}
+           <ul>
+    <li>
+        <b><a href = {{ post.post_link }}>{{ post.body }}</b></p></div>
+          </li>
+           </ul>
+{% endfor %}
+
+{% endblock %}

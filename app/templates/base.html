@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+    <nav>
+        <b><a href="/index"> Local Music </a></b>|
+        <a href="/artists">Artists</a> |
+        <a href="/new_artists">New Artists</a>
+</nav>
+    {% block content %} {% endblock %}
+    </body>
+</html>
