@@ -12,8 +12,21 @@
     <nav>
         <b><a href="/index"> Local Music </a></b>|
         <a href="/artists">Artists</a> |
-        <a href="/new_artists">New Artists</a>
+        <a href="/new_artists">New Artists</a> |
+        <a href="/login">Login</a> |
+        <a href="{{ url_for('create_user') }}">Create User</a>
+
+
 </nav>
+    {%  with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {%  endif %}
+    {%  endwith %}
     {% block content %} {% endblock %}
     </body>
 </html>
