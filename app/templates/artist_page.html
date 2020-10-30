@@ -1,6 +1,16 @@
     {%  extends "base.html" %}
 {%  block content %}
-    <h1>{{new_artist}}</h1>
-    <h3>{{town}}</h3>
-<p>{{description}}</p>
+    <h1>{{artist.name}}</h1>
+    <hr>
+    <h3>{{artist.city.name }}</h3>
+    <p>{{artist.description}}</p>
+
+    <ul>
+       {% for event in events %}
+        <li>
+            <b>{{ event.name }}</b> at the <b>{{ event.venue.name }}</b>
+            on <b>{{event.time}}</b>
+        </li>
+       {% endfor %}
+    </ul>
 {% endblock %}
