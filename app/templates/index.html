@@ -1,9 +1,8 @@
     {%  extends "base.html" %}
 {%  block content %}
     <h1>Local Music Hub</h1>
-    <h4>Hello, {{ user.username }}!</h4>
-      {% for post in posts %}
-           <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-{% endfor %}
+    <h4>Hello, {{ current_user.username }}!</h4>
+
+    <p>Welcome to the Local Music Database</p>
 
 {% endblock %}

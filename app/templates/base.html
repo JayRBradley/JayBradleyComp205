@@ -13,9 +13,13 @@
         <b><a href="/index"> Local Music </a></b>|
         <a href="/artists">Artists</a> |
         <a href="/new_artists">New Artists</a> |
-        <a href="/login">Login</a> |
-        <a href="{{ url_for('create_user') }}">Create User</a>
-
+        <a href="/new_event">New Event</a> |
+        <a href="/new_venue">New Venue</a> |
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
 
 </nav>
     {%  with messages = get_flashed_messages() %}
